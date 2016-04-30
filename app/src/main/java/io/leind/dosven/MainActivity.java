@@ -9,7 +9,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+import io.leind.dosven.Home.activity.BaseActivity;
+import io.leind.dosven.Home.activity.BaseDrawerActivity;
+
+public class MainActivity extends BaseDrawerActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
+
+        <!--app:contentScrim="?attr/colorPrimary"-->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:fitsSystemWindows="true"
+            app:titleEnabled="false"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp">
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="56dp"
+                android:layout_marginTop="62dp"
+                android:layout_marginBottom="36dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Categoria"
+                    android:maxLines="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fotografo"
+                    style="@style/Text.Headline"
+                    android:textStyle="bold"
+                    android:maxLines="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Filtros"
+                    android:maxLines="1" />
+
+                <!--<org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-12dp"
+                    app:dsb_min="0"
+                    app:dsb_max="100"
+                    app:dsb_value="80"
+                    app:dsb_rippleColor="@color/white"
+                    app:dsb_progressColor="@color/white"
+                    app:dsb_indicatorColor="@color/white"
+                    app:dsb_trackColor="@color/md_grey_200"
+                    />-->
+
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_collapseMode="pin" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_add_white_24dp"
+        android:layout_margin="@dimen/fab_margin"
+        android:clickable="true"/>
+
+</android.support.design.widget.CoordinatorLayout>

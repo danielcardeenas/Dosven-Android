@@ -1,20 +1,141 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Dosven" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">true</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Dosven.Dark" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/background_super_dark</item>
+    </style>
 
+    <!-- Views styles
+        TODO: set a transtition item
+    -->
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="CardViewStyle.Light" parent="CardView.Light">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="CardViewStyle.Dark" parent="CardView.Dark">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <!-- Font styles -->
+    <style name="CodeFont" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="Text.Display4" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">@dimen/material_text_display4</item>
+    </style>
+
+    <style name="Text.Display3" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/material_text_display3</item>
+    </style>
+
+    <style name="Text.Display2" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/material_text_display2</item>
+    </style>
+
+    <style name="Text.Display1" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/material_text_display1</item>
+    </style>
+
+    <style name="Text.Display1.Light" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">@dimen/material_text_display1</item>
+    </style>
+
+    <style name="Text.Headline" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/material_text_headline</item>
+    </style>
+
+    <style name="Text.Title" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/material_text_title</item>
+    </style>
+
+    <style name="Text.Subhead" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/material_text_subhead</item>
+    </style>
+
+    <style name="Text.Body2" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/material_text_body2</item>
+    </style>
+
+    <style name="Text.Body1" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/material_text_body1</item>
+    </style>
+
+    <style name="Text.Caption" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/material_text_caption</item>
+    </style>
+
+    <style name="Text.Menu" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/material_text_menu</item>
+    </style>
+
+    <style name="Text.Button" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/material_text_button</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Property.Title" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ACACAC</item>
+    </style>
+
+    <style name="Property.Title.Inversed" parent="Property.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Property.Definition" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Property.Definition.Inversed" parent="Property.Definition">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
