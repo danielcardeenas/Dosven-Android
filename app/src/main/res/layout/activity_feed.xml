@@ -28,7 +28,7 @@
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:layout_marginStart="36dp"
-                android:layout_marginEnd="56dp"
+                android:layout_marginEnd="36dp"
                 android:layout_marginTop="62dp"
                 android:layout_marginBottom="36dp"
                 android:orientation="vertical">
@@ -47,12 +47,37 @@
                     android:textStyle="bold"
                     android:maxLines="1" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Filtros"
-                    android:maxLines="1" />
+                    android:paddingTop="16dp">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_gravity="left"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Filtros"
+                            android:maxLines="1" />
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_weight=".1"
+                        android:text="{faw-pencil} Edit"
+                        android:layout_gravity="right"
+                        android:clickable="true"
+                        android:background="@color/colorPrimaryDark"/>
+
+                </LinearLayout>
 
                 <!--<org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
                     android:layout_width="match_parent"
