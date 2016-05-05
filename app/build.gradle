@@ -50,5 +50,8 @@ dependencies {
     compile 'com.mikepenz:fontawesome-typeface:4.6.0.1@aar'
 
     // Tags view
-    compile 'co.lujun:androidtagview:1.0.3'
+    compile 'me.gujun.android.taggroup:library:1.4@aar'
+
+    // Animations (not used now)
+    compile 'com.bartoszlipinski:viewpropertyobjectanimator:1.4.5'
 }

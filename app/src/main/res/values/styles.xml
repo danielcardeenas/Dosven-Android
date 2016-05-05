@@ -138,4 +138,11 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Tag group styling -->
+    <style name="FeedTagGroup" parent="TagGroup">
+        <item name="atg_backgroundColor">#036A79</item>
+        <item name="atg_borderColor">#036A79</item>
+        <item name="atg_textColor">#FFFFFF</item>
+    </style>
+
 </resources>
