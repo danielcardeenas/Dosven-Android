@@ -1,4 +1,4 @@
-package io.leind.dosven.Home.activity;
+package io.leind.dosven.UI.Home.activity;
 
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;

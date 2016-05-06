@@ -3,14 +3,13 @@ package io.leind.dosven;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-import io.leind.dosven.Home.activity.BaseActivity;
-import io.leind.dosven.Home.activity.BaseDrawerActivity;
+import io.leind.dosven.UI.Home.activity.BaseDrawerActivity;
+import io.leind.dosven.R;
 
 public class MainActivity extends BaseDrawerActivity {
 

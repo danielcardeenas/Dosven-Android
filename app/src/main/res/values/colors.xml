@@ -21,6 +21,7 @@
     <!-- Generals -->
     <color name="white">#FFFFFF</color>
     <color name="tranparent_white">#55FFFFFF</color>
+    <color name="tranparent">#80000000</color>
     <color name="black">#000000</color>
     <color name="btn_context_menu_pressed">#40000000</color>
     <color name="btn_context_menu_normal">#ffffff</color>
