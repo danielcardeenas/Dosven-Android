@@ -58,4 +58,7 @@ dependencies {
 
     // Animations (not used now)
     compile 'com.bartoszlipinski:viewpropertyobjectanimator:1.4.5'
+
+    // Material edittext
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
 }

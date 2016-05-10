@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private void setBackgroundImage() {
         Glide.with(this)
                 .load("https://snap-photos.s3.amazonaws.com/img-thumbs/960w/MRJ2ESOQWX.jpg")
-                .bitmapTransform(new ColorFilterTransformation(this, Color.argb(100, 255, 255, 255)))
+                .bitmapTransform(new ColorFilterTransformation(this, Color.argb(100, 0, 0, 0)))
                 .into(loginBackground);
     }
 }
