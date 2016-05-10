@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:background="@color/md_grey_300">
+
+        <ImageView
+            android:id="@+id/login_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+        <!-- Login form -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            style="@style/Widget.CardContent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="140dp"
+                android:text="Email or username"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/login_button"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:background="@color/colorAccent"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:layout_weight="0"/>
+
+</LinearLayout>
