@@ -8,8 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import io.leind.dosven.UI.Home.activity.BaseDrawerActivity;
-import io.leind.dosven.R;
+import io.leind.dosven.UI.Base.activity.BaseDrawerActivity;
 
 public class MainActivity extends BaseDrawerActivity {
 

@@ -12,8 +12,6 @@ import android.support.v4.content.ContextCompat;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -23,7 +21,7 @@ import com.bumptech.glide.Glide;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import io.leind.dosven.UI.Home.activity.BaseDrawerActivity;
+import io.leind.dosven.UI.Base.activity.BaseDrawerActivity;
 import io.leind.dosven.R;
 import jp.wasabeef.glide.transformations.ColorFilterTransformation;
 

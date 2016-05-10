@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -31,10 +32,17 @@ public class LoginActivity extends AppCompatActivity {
         setBackgroundImage();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
     private void setBackgroundImage() {
         Glide.with(this)
                 .load("https://snap-photos.s3.amazonaws.com/img-thumbs/960w/MRJ2ESOQWX.jpg")
-                .bitmapTransform(new ColorFilterTransformation(this, Color.argb(100, 0, 0, 0)))
+                .bitmapTransform(new ColorFilterTransformation(this, Color.argb(150, 0, 0, 0)))
                 .into(loginBackground);
     }
 }

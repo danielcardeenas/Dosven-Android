@@ -1,4 +1,4 @@
-package io.leind.dosven.UI.Home.activity;
+package io.leind.dosven.UI.Base.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
