@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base OwlSkills colors -->
-    <color name="colorPrimary">#009EB7</color>
-    <color name="colorPrimaryDark">#036A79</color>
+    <!--<color name="colorPrimary">#009EB7</color>-->
+    <!--<color name="colorPrimaryDark">#036A79</color>-->
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#4AD1B3</color>
     <color name="colorAccentDark">#008567</color>
 
@@ -12,6 +14,14 @@
     <color name="profile_status_bar">#0C7972</color>
     <color name="background_super_dark">#2F3739</color>
     <color name="card_dark_background">#303030</color>
+
+    <!-- New colors -->
+    <color name="new_back">#1D2028</color>
+    <color name="new_back_dark">#04070F</color>
+    <color name="new_green">#1A8D79</color>
+    <color name="new_green_dark">#005A46</color>
+    <color name="new_blue">#1B81F1</color>
+    <color name="new_red">#D62A27</color>
 
     <!-- Plaid imported colors -->
     <color name="plaid_background_super_dark">#ff292929</color>

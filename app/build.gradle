@@ -61,4 +61,7 @@ dependencies {
 
     // Material edittext
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
+
+    // Singup
+    compile 'com.redbooth:WelcomeCoordinator:1.0.1'
 }

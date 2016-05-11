@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.redbooth.WelcomePageLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:showIndicators="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="26dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/email_edit_text"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:met_baseColor="@color/white"
+                app:met_primaryColor="@color/colorAccent"
+                app:met_errorColor="@color/new_red"
+                app:met_floatingLabel="highlight"
+                android:hint="Email"
+                app:met_helperText="We will send you a confirmation message"
+                android:textCursorDrawable="@drawable/color_cursor"
+                app:met_floatingLabelText="Email"
+                app:met_textColorHint="#94969F"
+                app:met_clearButton="true"
+            />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/login_button"
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:background="@color/colorAccent"
+            android:text="Singup"
+            android:textColor="@color/white"
+            android:layout_weight="0"/>
+
+    </LinearLayout>
+
+</com.redbooth.WelcomePageLayout>

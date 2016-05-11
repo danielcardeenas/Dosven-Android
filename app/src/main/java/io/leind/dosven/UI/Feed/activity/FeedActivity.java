@@ -49,8 +49,8 @@ public class FeedActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setTitle("");
 
-        succesBar.getProgressDrawable().setColorFilter(
-                Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
+        //succesBar.getProgressDrawable().setColorFilter(
+        //        Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
 
         // When appbar gets drawed
         appBar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
