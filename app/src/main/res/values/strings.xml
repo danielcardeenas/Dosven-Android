@@ -17,5 +17,14 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="singup_continue">Continue</string>
+    <string name="singup_password">Password</string>
+    <string name="singup_email_error">Please use a valid email</string>
+    <string name="singup_i_to_want_hire">I want to hire a freelancer</string>
+    <string name="singup_i_want_to_work">I want to work</string>
+    <string name="singup_invalid_password">Invalid password</string>
+
+    <!-- Application texts -->
+
 
 </resources>

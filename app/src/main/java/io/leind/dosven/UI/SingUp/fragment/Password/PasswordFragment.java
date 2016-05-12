@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.RelativeLayout;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
 
@@ -19,6 +20,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.leind.dosven.R;
 import io.leind.dosven.Utils.METValidators.EmailValidator;
+import io.leind.dosven.Utils.METValidators.PasswordValidator;
 import io.leind.dosven.Utils.Utils;
 
 /**
@@ -26,7 +28,7 @@ import io.leind.dosven.Utils.Utils;
  */
 public class PasswordFragment extends Fragment {
     @Bind(R.id.login_button)
-    AppCompatButton continueButton;
+    RelativeLayout continueButton;
 
     @Bind(R.id.email_edit_text)
     MaterialEditText editText;
@@ -70,14 +72,6 @@ public class PasswordFragment extends Fragment {
                     return true;
                 }
 
-                // If it's not enter key
-                else {
-                    if (validatePasswordField())
-                        changeButtonColor(GREEN_HEX);
-                    else
-                        changeButtonColor(RED_HEX);
-                }
-
                 return false;
             }
         });
@@ -85,15 +79,15 @@ public class PasswordFragment extends Fragment {
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (validatePasswordField())
                     changeButtonColor(GREEN_HEX);
-                else
+                else {
                     changeButtonColor(RED_HEX);
+                }
             }
 
             @Override
@@ -128,8 +122,7 @@ public class PasswordFragment extends Fragment {
     }
 
     private void changeButtonColor(int hex) {
-        ColorStateList colorStateList = new ColorStateList(new int[][] {{0}}, new int[] {hex}); // 0xAARRGGBB
-        continueButton.setSupportBackgroundTintList(colorStateList);
+        continueButton.setBackgroundColor(hex);
     }
 
     @Override
@@ -145,6 +138,6 @@ public class PasswordFragment extends Fragment {
 
     // Mimimum 6 characters
     private boolean validatePasswordField() {
-        return editText.getText().toString().length() >= 6;
+        return Utils.isValidPassword(editText.getText().toString());
     }
 }

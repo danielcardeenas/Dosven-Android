@@ -5,8 +5,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+
+import com.mikepenz.iconics.context.IconicsLayoutInflater;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +21,8 @@ import io.leind.dosven.UI.SingUp.fragment.Email.EmailFragment;
 import io.leind.dosven.UI.SingUp.fragment.Email.EmailFragmentListener;
 import io.leind.dosven.UI.SingUp.fragment.Password.PasswordFragment;
 import io.leind.dosven.UI.SingUp.fragment.Password.PasswordFragmentListener;
+import io.leind.dosven.UI.SingUp.fragment.UserType.UserTypeFragment;
+import io.leind.dosven.UI.SingUp.fragment.UserType.UserTypeFragmentListener;
 
 /**
  * Created by leind on 11/05/16.
@@ -48,8 +53,22 @@ public class SingUpActivity extends AppCompatActivity {
         }
     };
 
+    UserTypeFragmentListener userTypeFragmentListener = new UserTypeFragmentListener() {
+        @Override
+        public void onCanAdvance() {
+            // Go next page
+            int currentItem = viewPager.getCurrentItem();
+            if (currentItem < 3) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
+            }
+        }
+    };
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        // Iconics
+        LayoutInflaterCompat.setFactory(getLayoutInflater(), new IconicsLayoutInflater(getDelegate()));
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singup);
         ButterKnife.bind(this);
@@ -70,6 +89,10 @@ public class SingUpActivity extends AppCompatActivity {
         PasswordFragment passwordFragment = PasswordFragment.newInstance(0);
         passwordFragment.setPasswordFragmentListener(passwordFragmentListener);
 
+        UserTypeFragment userTypeFragment = UserTypeFragment.newInstance(0);
+        userTypeFragment.setUserTypeFragmentListener(userTypeFragmentListener);
+
+        adapter.addFrag(userTypeFragment);
         adapter.addFrag(emailFragment);
         adapter.addFrag(passwordFragment);
 

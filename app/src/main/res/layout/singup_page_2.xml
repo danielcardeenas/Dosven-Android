@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.redbooth.WelcomePageLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    app:showIndicators="false"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
@@ -32,7 +31,7 @@
                 app:met_errorColor="@color/new_red"
                 app:met_floatingLabel="highlight"
                 android:inputType="textPassword"
-                android:hint="Password"
+                android:hint="@string/singup_password"
                 app:met_helperText="Password must be at least 6 characters long"
                 app:met_minCharacters="6"
                 android:textCursorDrawable="@drawable/color_cursor"
@@ -43,15 +42,36 @@
 
         </LinearLayout>
 
-        <android.support.v7.widget.AppCompatButton
+        <RelativeLayout
             android:id="@+id/login_button"
             android:layout_width="fill_parent"
             android:layout_height="55dp"
             android:background="@color/colorAccent"
-            android:text="Singup"
             android:textColor="@color/white"
-            android:layout_weight="0"/>
+            android:layout_weight="0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                style="@style/Text.Button"
+                android:text="@string/singup_continue"
+                android:textColor="@color/white"
+                android:id="@+id/continue_text" />
+
+            <ProgressBar
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:id="@+id/progressBar"
+                android:indeterminate="true"
+                android:layout_marginStart="12dp"
+                android:layout_centerVertical="true"
+                android:indeterminateTint="@color/white"
+                android:layout_toEndOf="@id/continue_text"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
-</com.redbooth.WelcomePageLayout>
+</RelativeLayout>

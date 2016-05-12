@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true" android:focusableInTouchMode="true"
     android:background="@color/colorPrimary">
 
     <LinearLayout
@@ -16,27 +16,34 @@
             android:layout_height="match_parent"
             android:layout_marginStart="26dp"
             android:layout_marginEnd="26dp"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/email_edit_text"
-                android:layout_width="match_parent"
-                android:singleLine="true"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                app:met_baseColor="@color/white"
-                app:met_primaryColor="@color/colorAccent"
-                app:met_errorColor="@color/new_red"
-                app:met_floatingLabel="highlight"
-                android:hint="Email"
-                app:met_helperText="We will send you a confirmation message"
-                android:textCursorDrawable="@drawable/color_cursor"
-                app:met_floatingLabelText="Email"
-                app:met_textColorHint="#94969F"
-                app:met_clearButton="true"
-            />
+                android:orientation="vertical">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/singup_i_to_want_hire"
+                    android:id="@+id/usertype_user_radio"
+                    android:textColor="@color/white"
+                    android:layout_gravity=""
+                    android:textSize="21sp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:text="@string/singup_i_want_to_work"
+                    android:id="@+id/usertype_freelancer_radio"
+                    android:textColor="@color/white"
+                    android:textSize="21sp"
+                    android:layout_gravity="" />
+
+            </RadioGroup>
 
         </LinearLayout>
 

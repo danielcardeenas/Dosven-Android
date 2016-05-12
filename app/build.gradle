@@ -52,6 +52,7 @@ dependencies {
     // Font icons
     compile 'com.mikepenz:iconics-core:2.5.11@aar'
     compile 'com.mikepenz:fontawesome-typeface:4.6.0.1@aar'
+    compile 'com.mikepenz:ionicons-typeface:2.0.1.1@aar'
 
     // Tags view
     compile 'me.gujun.android.taggroup:library:1.4@aar'
@@ -61,7 +62,4 @@ dependencies {
 
     // Material edittext
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
-
-    // Singup
-    compile 'com.redbooth:WelcomeCoordinator:1.0.1'
 }

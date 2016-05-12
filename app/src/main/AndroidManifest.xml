@@ -18,8 +18,8 @@
         <activity
             android:name=".UI.Login.activity.LoginActivity"
             android:label="@string/app_name"
-            android:launchMode="singleInstance"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
             android:theme="@style/Dosven.FullScreen">
 
             <intent-filter>

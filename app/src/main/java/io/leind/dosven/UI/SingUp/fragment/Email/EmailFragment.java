@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.AppCompatButton;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -12,7 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import butterknife.Bind;
@@ -26,7 +26,7 @@ import io.leind.dosven.Utils.Utils;
  */
 public class EmailFragment extends Fragment {
     @Bind(R.id.login_button)
-    AppCompatButton continueButton;
+    RelativeLayout continueButton;
 
     @Bind(R.id.email_edit_text)
     MaterialEditText editText;
@@ -85,7 +85,7 @@ public class EmailFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                 changeButtonColor(GREEN_HEX);
+                changeButtonColor(GREEN_HEX);
             }
 
             @Override
@@ -93,6 +93,8 @@ public class EmailFragment extends Fragment {
 
             }
         });
+
+        editText.requestFocus();
     }
 
     private void setContinueButton() {
@@ -106,7 +108,7 @@ public class EmailFragment extends Fragment {
 
     private void continuePressed() {
         // Validate email text
-        editText.validateWith(new EmailValidator("Please use a valid email"));
+        editText.validateWith(new EmailValidator(getActivity().getString(R.string.singup_email_error)));
 
         // Email is not valid so change the color of the button
         // This performs the same validation from above (EmailValidator)
@@ -128,7 +130,6 @@ public class EmailFragment extends Fragment {
     }
 
     private void changeButtonColor(int hex) {
-        ColorStateList colorStateList = new ColorStateList(new int[][] {{0}}, new int[] {hex}); // 0xAARRGGBB
-        continueButton.setSupportBackgroundTintList(colorStateList);
+        continueButton.setBackgroundColor(hex);
     }
 }
