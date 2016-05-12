@@ -5,6 +5,8 @@ import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatButton;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,6 +74,23 @@ public class EmailFragment extends Fragment {
                 else { changeButtonColor(GREEN_HEX); }
 
                 return false;
+            }
+        });
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 changeButtonColor(GREEN_HEX);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
     }
