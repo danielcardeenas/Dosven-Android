@@ -62,4 +62,7 @@ dependencies {
 
     // Material edittext
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
+
+    // Facebook
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
 }

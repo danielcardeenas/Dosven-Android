@@ -40,6 +40,7 @@
                 android:layout_weight=".6">
 
                 <TextView
+                    android:transitionName="@string/dosven_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Dosven"
@@ -101,6 +102,15 @@
         </LinearLayout>
 
     </FrameLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/login_facbeook_button"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:background="@color/new_blue"
+        android:text="Facebook"
+        android:textColor="@color/white"
+        android:layout_weight="0"/>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/login_button"
