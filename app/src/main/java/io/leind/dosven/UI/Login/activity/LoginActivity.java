@@ -70,13 +70,13 @@ public class LoginActivity extends AppCompatActivity {
         callbackManager = CallbackManager.Factory.create();
         loginManager = LoginManager.getInstance();
 
-        //loginManager.logOut();
-
         // Callback registration
         loginManager.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
+
                 Log.i("Facebook", "Success");
+
             }
 
             @Override
@@ -96,8 +96,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Profile.getCurrentProfile() == null) {
                     loginManager.logInWithReadPermissions(LoginActivity.this, Arrays.asList("public_profile", "email"));
-                }
-                else {
+                } else {
 
                 }
             }
@@ -128,6 +127,12 @@ public class LoginActivity extends AppCompatActivity {
                 LoginActivity.this.startActivity(myIntent);
             }
         });
+    }
+
+    private void startSingupActivity() {
+        Intent myIntent = new Intent(LoginActivity.this, SingUpActivity.class);
+        //myIntent.putExtra("key", value); //Optional parameters
+        LoginActivity.this.startActivity(myIntent);
     }
 
     private void setBackgroundImage() {

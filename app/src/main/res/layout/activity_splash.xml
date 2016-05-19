@@ -7,6 +7,7 @@
     android:background="@color/plaid_background_dark">
 
     <TextView
+        android:id="@+id/splash_logo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Dosven"
@@ -14,6 +15,7 @@
         android:gravity="center"
         android:textAllCaps="true"
         android:textStyle="bold"
+        android:transitionName="@string/dosven_name"
         style="@style/Text.Display3"/>
 
 </LinearLayout>

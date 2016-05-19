@@ -21,6 +21,8 @@ import io.leind.dosven.UI.SingUp.fragment.Email.EmailFragment;
 import io.leind.dosven.UI.SingUp.fragment.Email.EmailFragmentListener;
 import io.leind.dosven.UI.SingUp.fragment.Password.PasswordFragment;
 import io.leind.dosven.UI.SingUp.fragment.Password.PasswordFragmentListener;
+import io.leind.dosven.UI.SingUp.fragment.UserInfo.UserInfoFragment;
+import io.leind.dosven.UI.SingUp.fragment.UserInfo.UserInfoFragmentListener;
 import io.leind.dosven.UI.SingUp.fragment.UserType.UserTypeFragment;
 import io.leind.dosven.UI.SingUp.fragment.UserType.UserTypeFragmentListener;
 
@@ -35,10 +37,7 @@ public class SingUpActivity extends AppCompatActivity {
         @Override
         public void onCanAdvance() {
             // Go next page
-            int currentItem = viewPager.getCurrentItem();
-            if (currentItem < 3) {
-                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
-            }
+            goNextPage();
         }
     };
 
@@ -46,10 +45,7 @@ public class SingUpActivity extends AppCompatActivity {
         @Override
         public void onCanAdvance() {
             // Go next page
-            int currentItem = viewPager.getCurrentItem();
-            if (currentItem < 3) {
-                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
-            }
+            goNextPage();
         }
     };
 
@@ -57,12 +53,24 @@ public class SingUpActivity extends AppCompatActivity {
         @Override
         public void onCanAdvance() {
             // Go next page
-            int currentItem = viewPager.getCurrentItem();
-            if (currentItem < 3) {
-                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
-            }
+            goNextPage();
         }
     };
+
+    UserInfoFragmentListener userInfoFragmentListener = new UserInfoFragmentListener() {
+        @Override
+        public void onCanAdvance() {
+            // Go next page
+            goNextPage();
+        }
+    };
+
+    private void goNextPage() {
+        int currentItem = viewPager.getCurrentItem();
+        if (currentItem < 4) {
+            viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
+        }
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -92,9 +100,13 @@ public class SingUpActivity extends AppCompatActivity {
         UserTypeFragment userTypeFragment = UserTypeFragment.newInstance(0);
         userTypeFragment.setUserTypeFragmentListener(userTypeFragmentListener);
 
+        UserInfoFragment userInfoFragment = UserInfoFragment.newInstance(0);
+        userInfoFragment.setUserInfoFragmentListener(userInfoFragmentListener);
+
         adapter.addFrag(userTypeFragment);
         adapter.addFrag(emailFragment);
         adapter.addFrag(passwordFragment);
+        adapter.addFrag(userInfoFragment);
 
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
