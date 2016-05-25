@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 
 import butterknife.Bind;
@@ -23,6 +24,12 @@ public class UserTypeFragment extends Fragment {
 
     @Bind(R.id.progressBar)
     ProgressBar progressBar;
+
+    @Bind(R.id.usertype_freelancer_radio)
+    RadioButton freelancerRadio;
+
+    @Bind(R.id.usertype_user_radio)
+    RadioButton userRadio;
 
     int BLUE_HEX = 0xFF1B81F1; // 0xAARRGGBB
     int RED_HEX = 0xFFD62A27; // 0xAARRGGBB
@@ -49,7 +56,28 @@ public class UserTypeFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         setContinueButton();
+        setRadioButtons();
         return view;
+    }
+
+    private void setRadioButtons() {
+        userRadio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (userRadio.isChecked()) {
+                    changeButtonColor(GREEN_HEX);
+                }
+            }
+        });
+
+        freelancerRadio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (freelancerRadio.isChecked()) {
+                    changeButtonColor(GREEN_HEX);
+                }
+            }
+        });
     }
 
     private void setContinueButton() {
@@ -57,7 +85,12 @@ public class UserTypeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //progressBar.setVisibility(View.VISIBLE);
-                continuePressed();
+                if (userRadio.isChecked() || freelancerRadio.isChecked()) {
+                    continuePressed();
+                }
+                else {
+                    changeButtonColor(RED_HEX);
+                }
             }
         });
     }

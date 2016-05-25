@@ -7,10 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-
-import com.jaredrummler.materialspinner.MaterialSpinner;
+import com.rengwuxian.materialedittext.MaterialEditText;
+import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -25,6 +26,12 @@ public class UserInfoFragment extends Fragment {
 
     @Bind(R.id.progressBar)
     ProgressBar progressBar;
+
+   @Bind(R.id.userinfo_name)
+    MaterialEditText nameInput;
+
+    @Bind(R.id.userinfo_country)
+    MaterialBetterSpinner countryInput;
 
     int BLUE_HEX = 0xFF1B81F1; // 0xAARRGGBB
     int RED_HEX = 0xFFD62A27; // 0xAARRGGBB
@@ -50,8 +57,21 @@ public class UserInfoFragment extends Fragment {
         View view = inflater.inflate(R.layout.singup_page_4, container, false);
         ButterKnife.bind(this, view);
 
+        nameInput.requestFocus();
+
         setContinueButton();
+        setSpinner();
         return view;
+    }
+
+    private void setSpinner() {
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<>(
+                        getActivity(),
+                        R.layout.country_list_item,
+                        getResources().getStringArray(R.array.countries_array));
+
+        countryInput.setAdapter(adapter);
     }
 
     private void setContinueButton() {

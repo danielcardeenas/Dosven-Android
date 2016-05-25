@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="26dp"
             android:layout_marginEnd="26dp"
-            android:gravity="center"
+            android:layout_marginTop="26dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -26,13 +26,14 @@
                 android:singleLine="true"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:inputType="textCapWords"
                 app:met_baseColor="@color/white"
                 app:met_primaryColor="@color/colorAccent"
                 app:met_errorColor="@color/new_red"
                 app:met_floatingLabel="highlight"
-                android:hint="@string/Name"
+                android:hint="@string/first_name"
                 android:textCursorDrawable="@drawable/color_cursor"
-                app:met_floatingLabelText="@string/Name"
+                app:met_floatingLabelText="@string/first_name"
                 app:met_textColorHint="#94969F"
                 app:met_clearButton="true"
                 android:layout_marginBottom="16dp"
@@ -42,6 +43,7 @@
                 android:id="@+id/userinfo_last_name"
                 android:layout_width="match_parent"
                 android:singleLine="true"
+                android:inputType="textCapWords"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 app:met_baseColor="@color/white"
@@ -56,11 +58,9 @@
                 android:layout_marginBottom="16dp"
                 />
 
-
-            <com.rengwuxian.materialedittext.MaterialAutoCompleteTextView
-                android:id="@+id/email_edit_text"
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/userinfo_country"
                 android:layout_width="match_parent"
-                android:singleLine="true"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 app:met_baseColor="@color/white"
@@ -68,12 +68,10 @@
                 app:met_errorColor="@color/new_red"
                 app:met_floatingLabel="highlight"
                 android:hint="@string/country"
-                android:textCursorDrawable="@drawable/color_cursor"
-                app:met_floatingLabelText="Country"
                 app:met_textColorHint="#94969F"
-                app:met_clearButton="true"
-                android:layout_marginBottom="16dp"
-                />
+                app:met_floatingLabelText="@string/country"
+                android:layout_marginBottom="16dp"/>
+
 
         </LinearLayout>
 

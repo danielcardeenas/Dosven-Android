@@ -29,6 +29,7 @@
     <color name="plaid_background_dark">#ff333333</color>
 
     <!-- Generals -->
+    <color name="transparent">#80000000</color>
     <color name="white">#FFFFFF</color>
     <color name="tranparent_white">#55FFFFFF</color>
     <color name="tranparent">#80000000</color>
