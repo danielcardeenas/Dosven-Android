@@ -11,11 +11,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import com.rengwuxian.materialedittext.MaterialEditText;
-import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
+
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.leind.dosven.R;
+import io.leind.dosven.UIViews.Customs.MaterialBetterSpinner.MaterialBetterSpinner;
 
 /**
  * Created by leind on 11/05/16.
