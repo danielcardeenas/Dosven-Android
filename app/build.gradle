@@ -70,4 +70,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'appcompat-v7'
         exclude group: 'com.rengwuxian.materialedittext', module: 'library'
     }
+
+    // Circle indicator
+    compile 'me.relex:circleindicator:1.2.1@aar'
 }

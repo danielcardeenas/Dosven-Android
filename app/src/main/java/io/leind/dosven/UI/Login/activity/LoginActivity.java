@@ -59,8 +59,7 @@ public class LoginActivity extends AppCompatActivity {
 
         setSingupButton();
         setBackgroundImage();
-
-        setUpFacebook();
+        //setUpFacebook();
 
     }
 
