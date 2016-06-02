@@ -1,68 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <FrameLayout
+    <RelativeLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1"
-        android:background="@color/plaid_background_dark">
+        android:background="@color/plaid_background_light">
 
-        <ImageView
-            android:id="@+id/login_background"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"/>
-
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/singup_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Base.Widget.AppCompat.Button.Borderless"
-            android:text="@string/login_singup"
-            android:layout_gravity="end"
-            android:textColor="@color/white" />
-
-        <!-- Login form -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            style="@style/Widget.CardContent">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight=".6">
-
-                <TextView
-                    android:transitionName="@string/dosven_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Dosven"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:textAllCaps="true"
-                    android:textStyle="bold"
-                    style="@style/Text.Display3"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/email_login_form"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight=".4"
+                android:layout_height="match_parent"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="26dp"
+                android:gravity="center"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColorHint="@color/white">
+                    android:layout_height="wrap_content">
 
                     <AutoCompleteTextView
                         android:id="@+id/email"
@@ -71,7 +33,6 @@
                         android:hint="@string/prompt_email"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
-                        android:textColor="@color/white"
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -79,8 +40,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:textColorHint="@color/white">
+                    android:layout_marginTop="16dp">
 
                     <EditText
                         android:id="@+id/password"
@@ -91,7 +51,6 @@
                         android:imeActionLabel="@string/action_sign_in_short"
                         android:imeOptions="actionUnspecified"
                         android:inputType="textPassword"
-                        android:textColor="@color/white"
                         android:maxLines="1"
                         android:singleLine="true" />
 
@@ -99,26 +58,37 @@
 
             </LinearLayout>
 
+            <RelativeLayout
+                android:id="@+id/login_button"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"
+                android:layout_weight="0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    style="@style/Text.Button"
+                    android:text="@string/login_text"
+                    android:textColor="@color/white"
+                    android:id="@+id/continue_text" />
+
+                <ProgressBar
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:id="@+id/progressBar"
+                    android:indeterminate="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_centerVertical="true"
+                    android:indeterminateTint="@color/white"
+                    android:layout_toEndOf="@id/continue_text"
+                    android:visibility="invisible"/>
+
+            </RelativeLayout>
+
         </LinearLayout>
 
-    </FrameLayout>
-
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/login_facbeook_button"
-        android:layout_width="fill_parent"
-        android:layout_height="55dp"
-        android:background="@color/new_blue"
-        android:text="Facebook"
-        android:textColor="@color/white"
-        android:layout_weight="0"/>
-
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/login_button"
-        android:layout_width="fill_parent"
-        android:layout_height="55dp"
-        android:background="@color/colorAccent"
-        android:text="Login"
-        android:textColor="@color/white"
-        android:layout_weight="0"/>
-
-</LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

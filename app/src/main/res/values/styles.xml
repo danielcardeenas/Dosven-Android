@@ -9,7 +9,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowActionBarOverlay">true</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorControlNormal">#c5c5c5</item>
     </style>
 
     <style name="Dosven.Dark" parent="Theme.AppCompat">
@@ -20,6 +19,7 @@
         <item name="windowActionBarOverlay">true</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@color/background_super_dark</item>
+        <item name="colorControlNormal">#c5c5c5</item>
     </style>
 
     <style name="Dosven.FullScreen" parent="Dosven">
@@ -35,7 +35,7 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-    
+
     <!-- Views styles
         TODO: set a transtition item
     -->

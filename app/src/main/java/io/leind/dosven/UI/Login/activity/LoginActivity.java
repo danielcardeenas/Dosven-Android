@@ -18,9 +18,6 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -29,22 +26,16 @@ import com.facebook.Profile;
 import com.facebook.ProfileTracker;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.leind.dosven.R;
 import io.leind.dosven.UI.SingUp.activity.SingUpActivity;
-import jp.wasabeef.glide.transformations.ColorFilterTransformation;
 
 public class LoginActivity extends AppCompatActivity {
     // UI
-    @Bind(R.id.login_background) ImageView loginBackground;
-    @Bind(R.id.singup_button) AppCompatButton singupButton;
-    @Bind(R.id.login_facbeook_button) AppCompatButton facebookButton;
+    /*@Bind(R.id.login_facbeook_button)*/ AppCompatButton facebookButton;
 
     // Facebook
     LoginManager loginManager;
@@ -56,10 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
-        setSingupButton();
-        setBackgroundImage();
-        //setUpFacebook();
 
     }
 
@@ -117,27 +104,9 @@ public class LoginActivity extends AppCompatActivity {
         return true;
     }
 
-    private void setSingupButton() {
-        singupButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(LoginActivity.this, SingUpActivity.class);
-                //myIntent.putExtra("key", value); //Optional parameters
-                LoginActivity.this.startActivity(myIntent);
-            }
-        });
-    }
-
     private void startSingupActivity() {
         Intent myIntent = new Intent(LoginActivity.this, SingUpActivity.class);
         //myIntent.putExtra("key", value); //Optional parameters
         LoginActivity.this.startActivity(myIntent);
-    }
-
-    private void setBackgroundImage() {
-        Glide.with(this)
-                .load("https://snap-photos.s3.amazonaws.com/img-thumbs/960w/MRJ2ESOQWX.jpg")
-                .bitmapTransform(new ColorFilterTransformation(this, Color.argb(150, 0, 0, 0)))
-                .into(loginBackground);
     }
 }

@@ -45,8 +45,8 @@
             android:name=".UI.Login.activity.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden"
-            android:theme="@style/Dosven.FullScreen">
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Dosven">
 
         </activity>
 
@@ -55,7 +55,7 @@
             android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait"
             android:label="@string/app_name"
-            android:theme="@style/Dosven">
+            android:theme="@style/Dosven.Dark">
 
         </activity>
 

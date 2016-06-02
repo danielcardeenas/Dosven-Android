@@ -25,6 +25,7 @@
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
     <string name="country">Country</string>
+    <string name="login_text">Login</string>
 
     <!-- Countries -->
     <string-array name="countries_array">

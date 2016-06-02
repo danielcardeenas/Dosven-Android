@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.leind.dosven.R;
+import io.leind.dosven.UI.Login.activity.LoginActivity;
 import io.leind.dosven.UI.SingUp.activity.SingUpActivity;
 import jp.wasabeef.glide.transformations.ColorFilterTransformation;
 
@@ -51,14 +52,18 @@ public class IntroActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startSingupActivity();
+                startLoginActivity();
             }
         });
     }
 
     private void startSingupActivity() {
         Intent myIntent = new Intent(IntroActivity.this, SingUpActivity.class);
-        //myIntent.putExtra("key", value); //Optional parameters
+        IntroActivity.this.startActivity(myIntent);
+    }
+
+    private void startLoginActivity() {
+        Intent myIntent = new Intent(IntroActivity.this, LoginActivity.class);
         IntroActivity.this.startActivity(myIntent);
     }
 
