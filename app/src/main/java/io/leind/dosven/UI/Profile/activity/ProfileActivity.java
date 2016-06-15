@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -25,7 +26,7 @@ import io.leind.dosven.UI.Base.activity.BaseDrawerActivity;
 import io.leind.dosven.R;
 import jp.wasabeef.glide.transformations.ColorFilterTransformation;
 
-public class ProfileActivity extends BaseDrawerActivity {
+public class ProfileActivity extends AppCompatActivity {
     @Bind(R.id.profile_image) ImageView profileImage;
     @Bind(R.id.appbar) AppBarLayout appBar;
     @Bind(R.id.profile_properties1) LinearLayout profileProperties1;

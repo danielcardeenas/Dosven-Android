@@ -18,6 +18,8 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.RelativeLayout;
+
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -31,11 +33,16 @@ import java.util.Arrays;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.leind.dosven.R;
+import io.leind.dosven.UI.Profile.activity.ProfileActivity;
 import io.leind.dosven.UI.SingUp.activity.SingUpActivity;
 
 public class LoginActivity extends AppCompatActivity {
     // UI
-    /*@Bind(R.id.login_facbeook_button)*/ AppCompatButton facebookButton;
+    @Bind(R.id.login_button) RelativeLayout loginButton;
+
+    /*
+     * Facebook
+     * @Bind(R.id.login_facbeook_button)*/ AppCompatButton facebookButton;
 
     // Facebook
     LoginManager loginManager;
@@ -47,10 +54,24 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
+        setupLoginButton();
     }
 
-    private void setUpFacebook() {
+    private void setupLoginButton() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startProfileActivity();
+            }
+        });
+    }
+
+    private void startProfileActivity() {
+        Intent myIntent = new Intent(LoginActivity.this, ProfileActivity.class);
+        LoginActivity.this.startActivity(myIntent);
+    }
+
+    private void setupFacebook() {
         // Init
         FacebookSdk.sdkInitialize(getApplicationContext());
         callbackManager = CallbackManager.Factory.create();
@@ -60,7 +81,6 @@ public class LoginActivity extends AppCompatActivity {
         loginManager.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-
                 Log.i("Facebook", "Success");
 
             }
